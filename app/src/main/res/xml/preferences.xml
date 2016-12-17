@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Notes settings">
+        <ListPreference
+            android:key="pref_titleColor"
+            android:title="Notes title Color"
+            android:dialogTitle="Notes title Color"
+            android:entries="@array/title_color"
+            android:entryValues="@array/title_color"
+            android:defaultValue="Light Blue"/>
+        <ListPreference
+            android:key="pref_dataColor"
+            android:title="Notes data Color"
+            android:dialogTitle="Notes data Color"
+            android:entries="@array/data_color"
+            android:entryValues="@array/data_color"
+            android:defaultValue="Black"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Connection Settings">
+        <CheckBoxPreference
+            android:key="pref_sync"
+            android:title="Sync your notes"
+            android:summary="Uses WiFi by default"
+            android:defaultValue="true"/>
+        <ListPreference
+            android:dependency="pref_sync"
+            android:key="pref_syncConnection"
+            android:title="Connection type"
+            android:dialogTitle="Connection type"
+            android:entries="@array/connection_Types"
+            android:entryValues="@array/connection_Types"
+            android:defaultValue="WiFi"/>
+        <ListPreference
+            android:dependency="pref_sync"
+            android:key="pref_syncServer"
+            android:title="Sync Server"
+            android:dialogTitle="Sync Server"
+            android:entries="@array/sync_Servers"
+            android:entryValues="@array/sync_Servers"
+            android:defaultValue="Home"/>
+    </PreferenceCategory>
+</PreferenceScreen>
